@@ -32,25 +32,32 @@
 }
 
 /* Mobile styles */
+/* Larger navbar and burger on mobile */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--wedding-pink) !important;
-    position: absolute;
-    top: 60px;
-    left: 0;
+  /* Increase navbar height */
+  .navbar {
+    min-height: 4rem; /* default ~3.25rem, now taller */
   }
 
-  .nav-links.show {
-    display: flex;
+  /* Bigger burger icon */
+  .navbar-burger {
+    width: 36px;   /* bigger click area */
+    height: 36px;
   }
 
-  .hamburger {
-    display: flex;
+  /* Make burger bars thicker and longer */
+  .navbar-burger span {
+    height: 3px;       /* bar thickness */
+    width: 26px;       /* bar length */
+    background-color: white; /* make it stand out */
+  }
+
+  /* Space between bars */
+  .navbar-burger span:not(:last-child) {
+    margin-bottom: 6px;
   }
 }
+
 
 .modal-card-head {
   background-color: var(--wedding-pink) !important;
