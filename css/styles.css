@@ -31,30 +31,37 @@
   transition: 0.3s;
 }
 
-/* Mobile styles */
-/* Larger navbar and burger on mobile */
 @media (max-width: 768px) {
-  /* Increase navbar height */
+  /* Make navbar taller */
   .navbar {
-    min-height: 4rem; /* default ~3.25rem, now taller */
+    padding: 1rem 1.5rem;
   }
 
-  /* Bigger burger icon */
-  .navbar-burger {
-    width: 36px;   /* bigger click area */
-    height: 36px;
+  /* Stack navbar items vertically */
+  .navbar-menu {
+    display: flex !important;  /* force visible */
+    flex-direction: column;
+    width: 100%;
   }
 
-  /* Make burger bars thicker and longer */
-  .navbar-burger span {
-    height: 3px;       /* bar thickness */
-    width: 26px;       /* bar length */
-    background-color: white; /* make it stand out */
+  .navbar-start, .navbar-end {
+    flex-direction: column;
+    align-items: flex-start; /* left align links and buttons */
+    width: 100%;
   }
 
-  /* Space between bars */
-  .navbar-burger span:not(:last-child) {
-    margin-bottom: 6px;
+  /* Navbar items full width and bigger text */
+  .navbar-item {
+    width: 100%;
+    font-size: 1.25rem; /* bigger text */
+    padding: 0.75rem 0;
+  }
+
+  /* The language buttons inside navbar-end */
+  .navbar-end .navbar-item .button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 

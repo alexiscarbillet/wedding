@@ -12,13 +12,6 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="index.html" data-key="nav_main"></a>
-
-      <!-- Burger for mobile -->
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
     </div>
 
     <div id="navbarBasic" class="navbar-menu">
@@ -59,17 +52,5 @@
       </div>
     </div>
   </section>
-  <script>
-    // Navbar burger toggle for mobile
-    document.addEventListener('DOMContentLoaded', () => {
-      const burger = document.querySelector('.navbar-burger');
-      const menu = document.getElementById(burger.dataset.target);
-
-      burger.addEventListener('click', () => {
-        burger.classList.toggle('is-active');
-        menu.classList.toggle('is-active');
-      });
-    });
-  </script>
 </body>
 </html>
