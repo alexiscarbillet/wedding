@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title data-key="site_title"></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/lang.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html" data-key="nav_main"></a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="dress_code.html" data-key="nav_dress"></a>
+        <a class="navbar-item" href="2_weddings.html" data-key="nav_why"></a>
+        <a class="navbar-item" href="rsvp.html" data-key="nav_rsvp"></a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button class="button is-small" onclick="setLanguage('english')">EN</button>
+          <button class="button is-small" onclick="setLanguage('french')">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Timeline Section -->
+  <section class="main-section">
+    <div class="container">
+      <h2 class="title has-text-centered" data-key="main_timeline" style="color: white;"></h2>
+      <p class="has-text-centered" data-key="main_timeline_subtitle" style="margin-bottom: 2rem;"></p>
+
+      <div class="horizontal-timeline">
+        <div class="timeline-event" onclick="openModal('modal5')">
+          <div class="event-name" data-key="timeline_event_1_name"></div>
+          <div class="dot"></div>
+          <div class="event-date" data-key="timeline_event_1_date"></div>
+        </div>
+
+        <div class="timeline-event" onclick="openModal('modal1')">
+          <div class="event-name" data-key="timeline_event_2_name"></div>
+          <div class="dot"></div>
+          <div class="event-date" data-key="timeline_event_2_date"></div>
+        </div>
+
+        <div class="timeline-event" onclick="openModal('modal2')">
+          <div class="event-name" data-key="timeline_event_3_name"></div>
+          <div class="dot"></div>
+          <div class="event-date" data-key="timeline_event_3_date"></div>
+        </div>
+
+        <div class="timeline-event" onclick="openModal('modal3')">
+          <div class="event-name" data-key="timeline_event_4_name"></div>
+          <div class="dot"></div>
+          <div class="event-date" data-key="timeline_event_4_date"></div>
+        </div>
+
+        <div class="timeline-event" onclick="openModal('modal4')">
+          <div class="event-name" data-key="timeline_event_5_name"></div>
+          <div class="dot"></div>
+          <div class="event-date" data-key="timeline_event_5_date"></div>
+        </div>
+      </div>
+
+      <p class="has-text-centered" data-key="timeline_paragraph_reminder" style="margin-top: 2rem; color: white;">
+        <!-- This will be filled by JS -->
+      </p>
+    </div>
+  </section>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-background" onclick="closeModal('modal1')"></div>
+    <div class="modal-card" style="max-width: 500px;">
+      <header class="modal-card-head">
+        <p class="modal-card-title" data-key="modal1_title"></p>
+        <button class="delete" aria-label="close" onclick="closeModal('modal1')"></button>
+      </header>
+      <section class="modal-card-body has-text-centered">
+        <p style="margin-bottom: 1rem;" data-key="modal1_text"></p>
+        <figure class="image" style="max-width: 250px; margin: 0 auto 1rem;">
+          <img src="img/proposal.jpg" alt="Engagement moment" style="margin-top: 2%;" />
+        </figure>
+      </section>
+      <footer class="modal-card-foot" style="justify-content: center;">
+        <button class="button" onclick="closeModal('modal1')">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-background" onclick="closeModal('modal2')"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title" data-key="modal2_title"></p>
+        <button class="delete" aria-label="close" onclick="closeModal('modal2')"></button>
+      </header>
+      <section class="modal-card-body" data-key="modal2_text"></section>
+      <footer class="modal-card-foot">
+        <button class="button" onclick="closeModal('modal2')">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-background" onclick="closeModal('modal3')"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title" data-key="modal3_title"></p>
+        <button class="delete" aria-label="close" onclick="closeModal('modal3')"></button>
+      </header>
+      <section class="modal-card-body">
+        <p style="margin-bottom: 1rem;" data-key="modal3_text"></p>
+        <!-- Image row -->
+        <div class="image-row">
+          <img src="img/FR_1.jpg" alt="France picture 1" />
+          <img src="img/FR_2.jpg" alt="France picture 2" />
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button" onclick="closeModal('modal3')">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-background" onclick="closeModal('modal4')"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title" data-key="modal4_title"></p>
+        <button class="delete" aria-label="close" onclick="closeModal('modal4')"></button>
+      </header>
+      <section class="modal-card-body has-text-centered">
+        <p style="margin-bottom: 1rem;" data-key="modal4_text"></p>
+        <!-- Image row -->
+        <div class="image-row">
+          <img src="img/CA_1.jpg" alt="Caribbean picture 1" />
+          <img src="img/CA_2.jpg" alt="Caribbean picture 2" />
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button" onclick="closeModal('modal4')">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal">
+    <div class="modal-background" onclick="closeModal('modal5')"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title" data-key="modal5_title"></p>
+        <button class="delete" aria-label="close" onclick="closeModal('modal5')"></button>
+      </header>
+      <section class="modal-card-body has-text-centered">
+        <p style="margin-bottom: 1rem;" data-key="modal5_text"></p>
+        <figure class="image" style="max-width: 250px; margin: 0 auto 1rem;">
+          <img src="img/begin.png" alt="The beginning" style="margin-top: 2%;" />
+        </figure>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button" onclick="closeModal('modal5')">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add("is-active");
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("is-active");
+    }
+  </script>
+</body>
+</html>

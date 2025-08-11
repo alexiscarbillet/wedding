@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-key="site_title"></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/lang.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html" data-key="nav_main"></a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="dress_code.html" data-key="nav_dress"></a>
+        <a class="navbar-item" href="2_weddings.html" data-key="nav_why"></a>
+        <a class="navbar-item" href="rsvp.html" data-key="nav_rsvp"></a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button class="button is-small" onclick="setLanguage('english')">EN</button>
+          <button class="button is-small" onclick="setLanguage('french')">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RSVP Section -->
+  <section class="section">
+    <div class="container" style="max-width: 600px;">
+      <h2 class="title has-text-centered" data-key="nav_rsvp"></h2>
+      <p class="subtitle has-text-centered" style="margin-bottom: 2rem;" data-key="rsvp_intro"></p>
+
+      <form action="https://formspree.io/f/your-id" method="POST" class="box">
+        <div class="field">
+          <label class="label" data-key="form_name"></label>
+          <div class="control">
+            <input class="input" type="text" name="name" placeholder="" data-placeholder-key="form_name_placeholder" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" data-key="form_email"></label>
+          <div class="control">
+            <input class="input" type="email" name="email" placeholder="" data-placeholder-key="form_email_placeholder" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" data-key="form_message"></label>
+          <div class="control">
+            <textarea class="textarea" name="message" placeholder="" data-placeholder-key="form_message_placeholder"></textarea>
+          </div>
+        </div>
+
+        <div class="field has-text-centered">
+          <button class="button is-primary is-rounded" type="submit" data-key="form_submit"></button>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
