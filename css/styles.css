@@ -56,11 +56,11 @@
     margin-bottom: 0.5rem;
   }
   p {
-    font-size: 1.4rem; /* Adjust as you like */
+    font-size: 1.4rem !important; /* Adjust as you like */
   }
 
   h2 {
-    font-size: 2rem; /* Bigger than desktop */
+    font-size: 2rem !important; /* Bigger than desktop */
   }
 }
 
