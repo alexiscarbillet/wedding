@@ -16,6 +16,42 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--wedding-pink) !important;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 .modal-card-head {
   background-color: var(--wedding-pink) !important;
 }
