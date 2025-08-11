@@ -12,9 +12,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="index.html" data-key="nav_main"></a>
+
+      <!-- Burger for mobile -->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <div class="navbar-menu">
+    <div id="navbarBasic" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="dress_code.html" data-key="nav_dress"></a>
         <a class="navbar-item" href="2_weddings.html" data-key="nav_why"></a>
@@ -69,7 +76,7 @@
       </div>
 
       <p class="has-text-centered" data-key="timeline_paragraph_reminder" style="margin-top: 2rem; color: white;">
-        <!-- This will be filled by JS -->
+        <!-- Filled by JS -->
       </p>
     </div>
   </section>
@@ -119,7 +126,6 @@
       </header>
       <section class="modal-card-body">
         <p style="margin-bottom: 1rem;" data-key="modal3_text"></p>
-        <!-- Image row -->
         <div class="image-row">
           <img src="img/FR_1.jpg" alt="France picture 1" />
           <img src="img/FR_2.jpg" alt="France picture 2" />
@@ -141,7 +147,6 @@
       </header>
       <section class="modal-card-body has-text-centered">
         <p style="margin-bottom: 1rem;" data-key="modal4_text"></p>
-        <!-- Image row -->
         <div class="image-row">
           <img src="img/CA_1.jpg" alt="Caribbean picture 1" />
           <img src="img/CA_2.jpg" alt="Caribbean picture 2" />
@@ -173,6 +178,7 @@
     </div>
   </div>
 
+  <!-- JS for modals -->
   <script>
     function openModal(id) {
       document.getElementById(id).classList.add("is-active");
@@ -180,6 +186,17 @@
     function closeModal(id) {
       document.getElementById(id).classList.remove("is-active");
     }
+
+    // Navbar burger toggle for mobile
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.getElementById(burger.dataset.target);
+
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+      });
+    });
   </script>
 </body>
 </html>
