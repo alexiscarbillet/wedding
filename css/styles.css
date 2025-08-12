@@ -192,12 +192,22 @@
   }
 
   .horizontal-timeline .timeline-line {
-    display: block !important;
-    grid-column: 2 / 3 !important;
-    grid-row: 1 / -1 !important;
-    justify-self: center !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    /* Commence exactement au centre du premier point */
+    top: calc(0.6rem + 10px) !important; /* 0.6rem = padding du 1er event, 10px = moitié du point (20px/2) */
+    bottom: 1rem !important;
     width: 4px !important;
     background-color: var(--wedding-pink) !important;
+    border-radius: 2px !important;
+    z-index: 0 !important;
+  }
+
+  /* Supprimer toute marge supplémentaire sur le premier event */
+  .timeline-event:first-child {
+    margin-top: 0 !important;
+    padding-top: 0.6rem !important; /* ou 0 si besoin */
   }
 
   .timeline-event { display: contents !important; }
