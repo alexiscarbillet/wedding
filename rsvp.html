@@ -12,7 +12,13 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="index.html" data-key="nav_main"></a>
+        <a class="navbar-item" href="index.html" data-key="nav_main"></a>
+        <!-- Hamburger for mobile -->
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div id="navbarBasic" class="navbar-menu">
@@ -65,5 +71,21 @@
       </form>
     </div>
   </section>
+  <script>
+    // Toggle burger menu (mobile)
+    document.addEventListener('DOMContentLoaded', () => {
+      // -- existing code (setLanguage) may already be here --
+
+      const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
+      burgers.forEach(burger => {
+        const targetId = burger.dataset.target;
+        const menu = document.getElementById(targetId);
+        burger.addEventListener('click', () => {
+          burger.classList.toggle('is-active');
+          if (menu) menu.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

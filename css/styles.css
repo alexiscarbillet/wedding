@@ -17,60 +17,100 @@
 }
 
 @media (max-width: 768px) {
+  /* NAVBAR MOBILE: use Bulma .is-active behavior */
+  .navbar-burger {
+    display: block;
+    cursor: pointer;
+  }
+  .navbar-burger span {
+    background-color: black; /* change si tu veux blanc */
+  }
+  /* hide menu by default on very small screens, show when .is-active */
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-menu.is-active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar-start, .navbar-end {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* === VERTICAL TIMELINE === */
   .horizontal-timeline {
     flex-direction: column; /* stack vertically */
-    align-items: flex-start; /* align items to left */
+    align-items: stretch;
     padding: 1rem 0;
     position: relative;
   }
 
+  /* vertical line */
   .horizontal-timeline::before {
     content: '';
     position: absolute;
-    top: 2rem;
-    bottom: 2rem;
-    left: 30px; /* position of the vertical bar */
+    top: 1.5rem;        /* ajuster selon ton padding */
+    bottom: 1.5rem;
+    left: 40px;         /* X-position of the vertical bar */
     width: 4px;
-    height: auto;
     background-color: var(--wedding-pink);
     z-index: 0;
   }
 
+  /* each event becomes a horizontal row with the dot on the left */
   .timeline-event {
-    flex: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
     position: relative;
-    padding-left: 70px; /* space for line + dot */
+    padding-left: 100px; /* space for vertical line + dot */
+    margin: 0.8rem 1rem;  /* espace entre events */
+    display: flex;
+    align-items: center;  /* <-- key: centers text relative to the dot */
+    gap: 1rem;
+    z-index: 1;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.18s ease;
   }
 
   .timeline-event:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.01);
   }
 
-  /* position the dot exactly centered on the vertical line */
+  /* dot: exactly on the vertical bar and vertically centered within the event row */
   .timeline-event .dot {
     position: absolute;
-    left: 30px; /* same as the vertical bar */
+    left: 40px; /* must match .horizontal-timeline::before left */
     top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    transform: translate(-50%, -50%); /* perfectly centered on bar */
+    z-index: 2;
+    /* ensure same size as desktop */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--wedding-pink);
+    border: 3px solid white;
   }
 
+  /* Put the text in a small column so name + date stack and are centered vertically */
   .timeline-event .event-name,
   .timeline-event .event-date {
+    margin: 0;              /* remove extra margins */
     text-align: left;
+    line-height: 1.1;
   }
 
   .timeline-event .event-name {
-    font-weight: bold;
-    margin-bottom: 0.2rem;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .timeline-event .event-date {
+    font-size: 0.9rem;
+    opacity: 0.95;
   }
 }
+
 
 
 
