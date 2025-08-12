@@ -20,16 +20,16 @@
   .horizontal-timeline {
     flex-direction: column; /* stack vertically */
     align-items: flex-start; /* align items to left */
-    padding: 1rem 0; /* adjust padding */
+    padding: 1rem 0;
     position: relative;
   }
 
   .horizontal-timeline::before {
     content: '';
     position: absolute;
-    top: 2rem; /* start a bit below top */
-    bottom: 2rem; /* end a bit before bottom */
-    left: 20px; /* align near left side */
+    top: 2rem;
+    bottom: 2rem;
+    left: 30px; /* position of the vertical bar */
     width: 4px;
     height: auto;
     background-color: var(--wedding-pink);
@@ -37,13 +37,13 @@
   }
 
   .timeline-event {
-    flex: none; /* prevent stretching */
+    flex: none;
     width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
     position: relative;
-    padding-left: 50px; /* space for the vertical line & dot */
+    padding-left: 70px; /* space for line + dot */
     cursor: pointer;
     transition: transform 0.2s ease;
   }
@@ -52,16 +52,15 @@
     transform: scale(1.05);
   }
 
-  /* position the dot on the vertical line */
+  /* position the dot exactly centered on the vertical line */
   .timeline-event .dot {
     position: absolute;
-    left: 8px;
+    left: 30px; /* same as the vertical bar */
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
   }
 
-  /* Event name and date stacked vertically */
   .timeline-event .event-name,
   .timeline-event .event-date {
     text-align: left;
@@ -72,6 +71,7 @@
     margin-bottom: 0.2rem;
   }
 }
+
 
 
 .modal-card-head {
