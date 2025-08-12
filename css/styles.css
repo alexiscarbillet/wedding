@@ -41,69 +41,79 @@
   }
 
   /* === VERTICAL TIMELINE === */
+  /* make the whole timeline a 3-column grid (name | dot | date) */
   .horizontal-timeline {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;      /* center column is fixed for the dot */
+    grid-auto-rows: minmax(56px, auto);      /* nice row height */
+    gap: 0.8rem 0;                           /* vertical gap between rows */
+    align-items: center;
     position: relative;
+    padding: 1rem;
   }
 
-  /* vertical line */
-  .horizontal-timeline::before {
-    content: '';
-    position: absolute;
-    top: 1.5rem;
-    bottom: 1.5rem;
-    left: 40px; /* vertical bar position */
+  /* vertical connecting line: placed in the middle column and spans all rows */
+  .horizontal-timeline .timeline-line {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    justify-self: center;
     width: 4px;
     background-color: var(--wedding-pink);
+    border-radius: 2px;
     z-index: 0;
   }
 
+  /* IMPORTANT: let the .timeline-event container keep JS handlers but disappear from layout
+     so its children become grid items. This makes the grid place name/dot/date into columns. */
   .timeline-event {
-    position: relative;
-    padding-left: 80px; /* space for line + dot */
-    margin: 0.8rem 1rem;
-    display: flex;
-    align-items: center; /* centers the text block vs. dot */
-    min-height: 60px; /* ensures enough height for centering */
+    display: contents; /* children become direct grid items */
   }
 
-  /* Dot perfectly on the vertical bar, centered vs text block */
+  /* left column: event name (right-aligned so it sits next to the dot) */
+  .timeline-event .event-name {
+    grid-column: 1 / 2;
+    justify-self: end;
+    align-self: center;
+    padding-right: 12px;
+    margin: 0;
+    text-align: right;
+    font-weight: 700;
+  }
+
+  /* center column: the dot */
   .timeline-event .dot {
-    position: absolute;
-    left: 40px; /* same as line */
-    top: 50%;
-    transform: translate(-50%, -50%);
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    z-index: 2;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: var(--wedding-pink);
     border: 3px solid white;
-    z-index: 2;
+    box-sizing: border-box;
   }
 
-  /* Wrap name + date in a vertical column for alignment */
-  .timeline-event .text-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* centers both name and date around the dot */
-  }
-
-  .timeline-event .event-name {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-
+  /* right column: event date (left-aligned) */
   .timeline-event .event-date {
+    grid-column: 3 / 4;
+    justify-self: start;
+    align-self: center;
+    padding-left: 12px;
     margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.85;
-    line-height: 1.2;
+    font-size: 0.95rem;
+    opacity: 0.95;
+    text-align: left;
+  }
+
+  /* tiny hover effect while keeping things centered */
+  .timeline-event:hover .event-name,
+  .timeline-event:hover .event-date {
+    transform: translateY(-2px);
   }
 }
+
 
 
 
