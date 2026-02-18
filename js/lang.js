@@ -16,9 +16,9 @@ const translations = {
     timeline_event_3_name: "Engagement Party",
     timeline_event_3_date: "August 30th, 2025",
     timeline_event_4_name: "Wedding in France",
-    timeline_event_4_date: "April 16th, 2026",
+    timeline_event_4_date: "Spring, 2026",
     timeline_event_5_name: "Wedding in Caribbean",
-    timeline_event_5_date: "Jan–Feb 2027",
+    timeline_event_5_date: "Summer 2027",
     timeline_paragraph_reminder: "Please do not forget to let us know if you are coming via {rsvp}.",
 
     modal1_title: "She said yes!",
@@ -66,9 +66,9 @@ const translations = {
     timeline_event_3_name: "Fête de fiançailles",
     timeline_event_3_date: "30 août 2025",
     timeline_event_4_name: "Mariage en France",
-    timeline_event_4_date: "16 avril 2026",
+    timeline_event_4_date: "Printemps, 2026",
     timeline_event_5_name: "Mariage aux Caraïbes",
-    timeline_event_5_date: "Janvier–Février 2027",
+    timeline_event_5_date: "Été 2027",
     timeline_paragraph_reminder: "N’oubliez pas de nous faire savoir si vous venez via le {rsvp}.",
 
     modal1_title: "Elle a dit oui !",
